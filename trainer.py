@@ -55,7 +55,7 @@ parser.add_argument('--save-dir', dest='save_dir',
 parser.add_argument('--save-every', dest='save_every',
                     help='Saves checkpoints at every specified number of epochs',
                     type=int, default=10)
-parser.add_argument('--randrotation', default=[0,0], type=list,
+parser.add_argument('--randrotation',default=None, nargs='+', type=int,
                     help='randrotation range')
 best_prec1 = 0
 
@@ -99,10 +99,17 @@ def main():
         ]), download=True),
         batch_size=args.batch_size, shuffle=True,
         num_workers=args.workers, pin_memory=True)
-
+    print(args.randrotation[0])
+    print(args.randrotation[1])
+    if args.randrotation == None:
+        rmin = 0
+        rmax = 0
+    else:
+        rmin  = int(args.randrotation[0])
+        rmax = int(args.randrotation[1])
     val_loader = torch.utils.data.DataLoader(
         datasets.CIFAR10(root='./data', train=False, transform=transforms.Compose([
-            transforms.RandomRotation((args.randrotation[0], args.randrotation[1])),
+            transforms.RandomRotation((rmin,rmax)),
             transforms.ToTensor(),
             normalize,
         ])),
