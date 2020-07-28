@@ -1,0 +1,19 @@
+| Dataset | model    | rotation | acc    |
+| ------- | -------- | -------- | ------ |
+| cifar10 | resnet20 | 0        | 91.740 |
+| cifar10 | resnet20 | 90       | 36.830 |
+| cifar10 | resnet20 | 180      | 41.830 |
+| cifar10 | resnet20 | 270      | 36.610 |
+| cifar10 | resnet56 | 0        | 93.120 |
+| cifar10 | resnet56 | 90       | 37.870 |
+| cifar10 | resnet56 | 180      | 40.640 |
+| cifar10 | resnet56 | 270      | 37.110 |
+| MNIST   | resnet20 | 0        | 99.280 |
+| MNIST   | resnet20 | 90       | 23.300 |
+| MNIST   | resnet20 | 180      | 48.040 |
+| MNIST   | resnet20 | 270      | 16.590 |
+| MNIST   | resnet56 | 0        | 99.210 |
+| MNIST   | resnet56 | 90       | 22.150 |
+| MNIST   | resnet56 | 180      | 48.380 |
+| MNIST   | resnet56 | 270      | 16.910 |
+
